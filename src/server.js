@@ -1,8 +1,10 @@
 import express from "express";
 import { db, connectDb } from "./db.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors({ origin: "*" }));
 
 app.get("/api/articles/:name", async (req, res) => {
   const { name } = req.params;
