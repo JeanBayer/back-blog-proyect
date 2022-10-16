@@ -51,7 +51,7 @@ app.post("/api/articles/:name/comments", async (req, res) => {
     return;
   }
 
-  res.status(200).json([...article.comments]);
+  res.status(200).json({ ...article });
 });
 
 connectDb(() => {
